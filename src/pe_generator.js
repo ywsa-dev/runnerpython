@@ -1,0 +1,43 @@
+const fs = require('fs');
+const path = require('path');
+
+class PEGenerator {
+    // PE 파일 헤더 생성
+    static generatePEHeader() {
+        // PE 파일의 최소 구조
+        const header = Buffer.from([
+            // DOS Header
+            0x4D, 0x5A, 0x90, 0x00, 0x03, 0x00, 0x00, 0x00,
+            0x04, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00,
+            0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00
+        ]);
+        return header;
+    }
+
+    static createSimpleExe(pythonCode) {
+        // 실행 가능한 간단한 C 코드 생성
+        const cCode = `
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    printf("RunnerPython v1.0\\n");
+    printf("================================\\n");
+    
+    // Python 코드 실행
+    system("python -c \\"${pythonCode.replace(/"/g, '\\"')}\\"");
+    
+    printf("\\nPress any key to close...");
+    system("pause > nul");
+    return 0;
+}`;
+        return cCode;
+    }
+}
+
+module.exports = { PEGenerator };

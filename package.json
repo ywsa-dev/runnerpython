@@ -1,0 +1,12 @@
+{
+  "name": "runnerpython",
+  "version": "1.0.0",
+  "description": "Simple Python to EXE Runner",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^28.0.0"
+  }
+}

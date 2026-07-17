@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e1e;
+    color: #cccccc;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 16px;
+    gap: 12px;
+}
+
+.header {
+    padding: 10px 16px;
+    background: #2d2d30;
+    border-radius: 4px;
+}
+
+.header h1 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #2d2d30;
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 16px;
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.editor-header span {
+    font-size: 12px;
+    color: #cccccc;
+}
+
+.btn-run {
+    padding: 4px 20px;
+    background: #0e639c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-run:hover {
+    background: #1177bb;
+}
+
+.code-editor {
+    flex: 1;
+    padding: 16px;
+    background: #1e1e1e;
+    border: none;
+    color: #cccccc;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    resize: none;
+    outline: none;
+    tab-size: 4;
+}
+
+.log-area {
+    height: 150px;
+    min-height: 100px;
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+    background: #2d2d30;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 16px;
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.log-header span {
+    font-size: 12px;
+    color: #cccccc;
+}
+
+.btn-clear {
+    padding: 2px 12px;
+    background: transparent;
+    border: none;
+    color: #6a6a6a;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-clear:hover {
+    color: #cccccc;
+}
+
+.log-output {
+    flex: 1;
+    padding: 8px 16px;
+    font-family: 'Consolas', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-y: auto;
+    background: #1e1e1e;
+    color: #cccccc;
+}
+
+.log-welcome {
+    color: #3e3e42;
+}
+
+.log-line {
+    margin: 0;
+    padding: 1px 0;
+}
+
+.log-line.info {
+    color: #569cd6;
+}
+
+.log-line.success {
+    color: #4ec9b0;
+}
+
+.log-line.error {
+    color: #f48771;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3e3e42;
+    border-radius: 4px;
+}

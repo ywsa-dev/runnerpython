@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunnerPython</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RunnerPython</h1>
+        </div>
+
+        <div class="editor-area">
+            <div class="editor-header">
+                <span>Code</span>
+                <button class="btn-run" onclick="buildAndRun()">Build EXE</button>
+            </div>
+            <textarea id="codeEditor" class="code-editor" spellcheck="false">print("Hello world!")</textarea>
+        </div>
+
+        <div class="log-area">
+            <div class="log-header">
+                <span>Log</span>
+                <button class="btn-clear" onclick="clearLog()">Clear</button>
+            </div>
+            <div id="logOutput" class="log-output">
+                <div class="log-welcome">Ready</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
