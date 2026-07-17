@@ -22,3 +22,4 @@ Node.js is a JavaScript runtime that allows CodeCraft X to run as a desktop appl
    ```bash
    node --version
    npm --version
+ 
